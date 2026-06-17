@@ -1,0 +1,46 @@
+.page-slide {
+  width: 100%;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.slide-in-right {
+  animation-name: slideInRight;
+}
+
+.slide-in-left {
+  animation-name: slideInLeft;
+}
+
+.slide-out-left {
+  animation-name: slideOutLeft;
+}
+
+.slide-out-right {
+  animation-name: slideOutRight;
+}
+
+.no-transition {
+  animation: none;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-60px); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(60px); }
+}
