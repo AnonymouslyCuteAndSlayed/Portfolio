@@ -519,7 +519,32 @@
 }
 
 @media (max-width: 600px) {
+  .skills-title { font-size: 22px !important; }
+  .skills-description { font-size: 12px !important; }
   .sp-wrapper { padding: 36px 16px; }
   .sp-header h1 { font-size: 2rem; }
   .sp-detail { padding: 22px 18px; }
+  .sp-projects-grid { grid-template-columns: 1fr; }
+
+  .sp-sidebar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .sp-cat-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 10px 8px;
+    min-width: 0;
+  }
+
+  .sp-cat-label {
+    display: none;
+  }
+
+  .sp-cat-icon {
+    margin: 0;
+  }
 }

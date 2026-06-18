@@ -176,8 +176,8 @@ const Skills = () => {
   return (
     <div className="sp-wrapper">
       <div className="sp-header">
-        <h1>Skills <em>&</em> Projects</h1>
-        <p>Click a category to see the tools I use and the projects I've built with them.</p>
+        <h1 className="skills-title">Skills <em>&</em> Projects</h1>
+        <p className="skills-description">Click a category to see the tools I use and the projects I've built with them.</p>
       </div>
 
       <div className="sp-body">
