@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, Fragment} from "react";
 import "./styles/skillsMain.css";
 
 const categories = [
@@ -129,6 +129,14 @@ const categories = [
 const Skills = () => {
   const [activeId, setActiveId] = useState("frontend");
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 860);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const active = categories.find((c) => c.id === activeId);
 
@@ -141,17 +149,38 @@ const Skills = () => {
     setSelectedProject((prev) => (prev?.name === proj.name ? null : proj));
   };
 
+  const renderPreviewBody = () => (
+    <>
+      <div className="sp-preview-img">
+        <img
+          src={selectedProject.previewImg}
+          alt={`${selectedProject.name} preview`}
+        />
+        <span className={`sp-preview-badge ${selectedProject.status}`}>
+          {selectedProject.status === "done" && "Completed"}
+        </span>
+      </div>
+
+      <div className="sp-preview-title">{selectedProject.name}</div>
+      <div className="sp-preview-desc">{selectedProject.desc}</div>
+
+      <p className="sp-section-label">Built with</p>
+      <div className="sp-preview-techs">
+        {selectedProject.techs.map((t) => (
+          <span className="sp-preview-tech" key={t}>{t}</span>
+        ))}
+      </div>
+    </>
+  );
+
   return (
     <div className="sp-wrapper">
       <div className="sp-header">
         <h1>Skills <em>&</em> Projects</h1>
-        <p>
-          Click a category to see the tools I use and the projects I've built with them.
-        </p>
+        <p>Click a category to see the tools I use and the projects I've built with them.</p>
       </div>
 
       <div className="sp-body">
-        {/* ── Sidebar ── */}
         <nav className="sp-sidebar">
           {categories.map((cat) => (
             <button
@@ -168,7 +197,6 @@ const Skills = () => {
           ))}
         </nav>
 
-        {/* ── Folder ── */}
         <div className="sp-folder">
           <div className="sp-folder-tab">
             <span className="sp-folder-tab-icon">{active.icon}</span>
@@ -176,9 +204,8 @@ const Skills = () => {
           </div>
 
           <div className="sp-detail" key={activeId}>
-            <div className={`sp-detail-inner ${selectedProject ? "has-preview" : ""}`}>
+            <div className={`sp-detail-inner ${selectedProject && !isMobile ? "has-preview" : ""}`}>
 
-              {/* ── Left: main content ── */}
               <div className="sp-main-col">
                 <div className="sp-detail-header">
                   <div className="sp-detail-icon">{active.icon}</div>
@@ -188,7 +215,6 @@ const Skills = () => {
                   </div>
                 </div>
 
-                {/* Skills */}
                 <p className="sp-section-label">Technologies</p>
                 <div className="sp-tags">
                   {active.skills.map((s) => (
@@ -196,7 +222,6 @@ const Skills = () => {
                   ))}
                 </div>
 
-                {/* Projects */}
                 <p className="sp-section-label">Projects</p>
                 {active.projects.length === 0 ? (
                   <div className="sp-empty">
@@ -206,56 +231,46 @@ const Skills = () => {
                 ) : (
                   <div className="sp-projects-grid">
                     {active.projects.map((proj) => (
-                      <div
-                        className={`sp-project-card ${selectedProject?.name === proj.name ? "selected" : ""}`}
-                        key={proj.name}
-                        onClick={() => handleProjectClick(proj)}
-                      >
-                        <div className="sp-project-top">
-                          <span className="sp-project-emoji">{proj.emoji}</span>
-                          <span className={`sp-project-status ${proj.status}`}>
-                            {proj.status === "done" && "Completed"}
-                          </span>
+                      <Fragment key={proj.name}>
+                        <div
+                          className={`sp-project-card ${selectedProject?.name === proj.name ? "selected" : ""}`}
+                          onClick={() => handleProjectClick(proj)}
+                        >
+                          <div className="sp-project-top">
+                            <span className="sp-project-emoji">{proj.emoji}</span>
+                            <span className={`sp-project-status ${proj.status}`}>
+                              {proj.status === "done" && "Completed"}
+                            </span>
+                          </div>
+                          <h4>{proj.name}</h4>
+                          <p>{proj.desc}</p>
+                          <div className="sp-project-techs">
+                            {proj.techs.map((t) => (
+                              <span className="sp-project-tech" key={t}>{t}</span>
+                            ))}
+                          </div>
                         </div>
-                        <h4>{proj.name}</h4>
-                        <p>{proj.desc}</p>
-                        <div className="sp-project-techs">
-                          {proj.techs.map((t) => (
-                            <span className="sp-project-tech" key={t}>{t}</span>
-                          ))}
-                        </div>
-                      </div>
+
+                        {isMobile && selectedProject?.name === proj.name && (
+                          <div className="sp-preview-inline">
+                            <div className="sp-preview-close">
+                              <button onClick={() => setSelectedProject(null)}>✕ close</button>
+                            </div>
+                            {renderPreviewBody()}
+                          </div>
+                        )}
+                      </Fragment>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* ── Right: preview panel ── */}
-              {selectedProject && (
+              {selectedProject && !isMobile && (
                 <div className="sp-preview-panel">
                   <div className="sp-preview-close">
                     <button onClick={() => setSelectedProject(null)}>✕ close</button>
                   </div>
-
-                  <div className="sp-preview-img">
-                    <img
-                      src={selectedProject.previewImg}
-                      alt={`${selectedProject.name} preview`}
-                    />
-                    <span className={`sp-preview-badge ${selectedProject.status}`}>
-                      {selectedProject.status === "done" && "Completed"}
-                    </span>
-                  </div>
-
-                  <div className="sp-preview-title">{selectedProject.name}</div>
-                  <div className="sp-preview-desc">{selectedProject.desc}</div>
-
-                  <p className="sp-section-label">Built with</p>
-                  <div className="sp-preview-techs">
-                    {selectedProject.techs.map((t) => (
-                      <span className="sp-preview-tech" key={t}>{t}</span>
-                    ))}
-                  </div>
+                  {renderPreviewBody()}
                 </div>
               )}
 

@@ -34,7 +34,6 @@
   max-width: 480px;
 }
 
-/* ─── Layout ──────────────────────────────────────────── */
 .sp-body {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -42,7 +41,6 @@
   align-items: start;
 }
 
-/* ─── Sidebar ─────────────────────────────────────────── */
 .sp-sidebar {
   display: flex;
   flex-direction: column;
@@ -135,7 +133,16 @@
   background: #fd7979;
 }
 
-/* ─── Folder shape ────────────────────────────────────── */
+
+.sp-preview-inline {
+  grid-column: 1 / -1;
+  background: #fff8f8;
+  border: 1.5px solid #fd7979;
+  border-radius: 14px;
+  padding: 20px;
+  animation: previewIn 0.25s cubic-bezier(0.4,0,0.2,1) both;
+}
+
 .sp-folder {
   display: flex;
   flex-direction: column;
@@ -170,7 +177,6 @@
   text-transform: uppercase;
 }
 
-/* ─── Detail panel ────────────────────────────────────── */
 .sp-detail {
   background: #fff;
   border: 1.5px solid #ffd6d6;
@@ -516,5 +522,4 @@
   .sp-wrapper { padding: 36px 16px; }
   .sp-header h1 { font-size: 2rem; }
   .sp-detail { padding: 22px 18px; }
-  .sp-projects-grid { grid-template-columns: 1fr; }
 }
