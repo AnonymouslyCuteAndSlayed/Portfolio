@@ -30,7 +30,7 @@ const About = () => {
       <div className="about-wrapper">
         <div className="about-container">
           <div className="about-left">
-            <img src="/my.png" className="about-image" alt="about" />
+            <img src={`${import.meta.env.BASE_URL}my.png`} className="about-image" alt="about" />
           </div>
           <AboutRight />
 
@@ -42,7 +42,7 @@ const About = () => {
         <div className="about-fill">
           <div className="about-fill-inner">
             <div className="about-fill-image-placeholder">
-              <img src="/cy_pic.jpg" alt="BSIT student" className="about-fill-img" /> 
+              <img src={`${import.meta.env.BASE_URL}cy_pic.jpg`} alt="BSIT student" className="about-fill-img" /> 
             </div>
             <div className="about-fill-text">
               <h2>Bachelor of Science in <span>Information Technology</span></h2>
@@ -71,7 +71,7 @@ const About = () => {
             </p>
           </div>
           <div className="about-friends-image-placeholder">
-            <img src="/friends.jpg" alt="Friends and blockmates" className="about-friends-img" />
+            <img src={`${import.meta.env.BASE_URL}friends.jpg`} alt="Friends and blockmates" className="about-friends-img" />
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ const About = () => {
         <div className="about-ojt-card">
           <div className="about-ojt-card-inner">
             <div className="about-ojt-image-placeholder">
-              <img src="/stronghold.jpg" alt="Stronghold OJT" className="about-ojt-img" />
+              <img src={`${import.meta.env.BASE_URL}stronghold.jpg`} alt="Stronghold OJT" className="about-ojt-img" />
             </div>
             <div className="about-ojt-info">
               <div className="about-ojt-tag">1st OJT</div>
@@ -105,7 +105,7 @@ const About = () => {
         <div className="about-ojt-card">
           <div className="about-ojt-card-inner">
             <div className="about-ojt-image-placeholder">
-              <img src="/ojt2.jpg" alt="2nd OJT - WEEPAY" className="about-ojt-img" />
+              <img src={`${import.meta.env.BASE_URL}ojt2.jpg`} alt="2nd OJT - WEEPAY" className="about-ojt-img" />
             </div>
             <div className="about-ojt-info">
               <div className="about-ojt-tag about-ojt-tag--second">2nd OJT</div>
