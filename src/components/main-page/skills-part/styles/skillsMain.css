@@ -146,6 +146,18 @@
 .sp-folder {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.sp-folder-avatar {
+  position: absolute;
+  top: -72px;
+  right: 24px;
+  width: 220px;
+  height: 200px;
+  object-fit: cover;
+  z-index: 10;
+  animation: panelFadeIn 0.20s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .sp-folder-tab {
@@ -180,21 +192,11 @@
 .sp-detail {
   background: #fff;
   border: 1.5px solid #ffd6d6;
-  border-radius: 0 18px 18px 18px;
+  border-radius: 18px;
   padding: 32px 36px;
   min-height: 480px;
   animation: panelFadeIn 0.28s cubic-bezier(0.4,0,0.2,1) both;
   position: relative;
-}
-
-.sp-detail::before {
-  content: '';
-  position: absolute;
-  top: -1.5px;
-  left: -1.5px;
-  width: 6px;
-  height: 3px;
-  background: #ffd6d6;
 }
 
 @keyframes panelFadeIn {
@@ -202,7 +204,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Detail inner: two-column when preview is open ───── */
 .sp-detail-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -215,7 +216,6 @@
   gap: 28px;
 }
 
-/* ─── Detail header ───────────────────────────────────── */
 .sp-detail-header {
   display: flex;
   align-items: center;
@@ -251,7 +251,6 @@
   font-weight: 300;
 }
 
-/* ─── Section labels ──────────────────────────────────── */
 .sp-section-label {
   font-family: 'Syne', sans-serif;
   font-size: 0.68rem;
@@ -262,7 +261,6 @@
   margin: 0 0 12px;
 }
 
-/* ─── Tags ────────────────────────────────────────────── */
 .sp-tags {
   display: flex;
   flex-wrap: wrap;
@@ -481,7 +479,6 @@
   border-radius: 999px;
 }
 
-/* ─── Empty state ─────────────────────────────────────── */
 .sp-empty {
   text-align: center;
   padding: 56px 20px;
@@ -490,7 +487,12 @@
 .sp-empty-icon { font-size: 2.2rem; margin-bottom: 10px; }
 .sp-empty p { font-size: 0.88rem; font-weight: 300; }
 
-/* ─── Responsive ──────────────────────────────────────── */
+.sp-cat-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 @media (max-width: 1024px) {
   .sp-wrapper { padding: 60px 48px; }
   .sp-detail-inner.has-preview {
@@ -499,12 +501,19 @@
 }
 
 @media (max-width: 860px) {
+  .sp-folder-avatar {
+    top: -30px;
+    width: 100px;
+    height: 100px;
+  }
+
   .sp-body { grid-template-columns: 1fr; }
   .sp-sidebar {
     flex-direction: row;
     flex-wrap: wrap;
     position: static;
   }
+
   .sp-cat-btn { flex: 1 1 auto; min-width: 110px; }
   .sp-cat-btn.active::after { display: none; }
   .sp-detail-inner.has-preview {
@@ -526,6 +535,13 @@
   .sp-detail { padding: 22px 18px; }
   .sp-projects-grid { grid-template-columns: 1fr; }
 
+  .sp-folder-avatar {
+    right: 10px;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+  }
+  
   .sp-sidebar {
     flex-direction: row;
     flex-wrap: nowrap;

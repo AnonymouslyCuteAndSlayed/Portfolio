@@ -5,7 +5,7 @@ const categories = [
   {
     id: "frontend",
     label: "Frontend",
-    icon: "🖥️",
+    icon: <img src={`${import.meta.env.BASE_URL}monitor.png`} alt="Frontend" className="sp-cat-icon-img" />,
     desc: "UI & interaction",
     skills: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"],
     projects: [
@@ -54,7 +54,7 @@ const categories = [
   {
     id: "design",
     label: "Design",
-    icon: "🎨",
+    icon: <img src={`${import.meta.env.BASE_URL}design.png`} alt="Design" className="sp-cat-icon-img" />,
     desc: "UI/UX & visuals",
     skills: ["Figma", "UI/UX Design", "Responsive Design", "Wireframing"],
     projects: [
@@ -79,7 +79,7 @@ const categories = [
   {
     id: "backend",
     label: "Backend",
-    icon: "⚙️",
+    icon: <img src={`${import.meta.env.BASE_URL}backend.png`} alt="Backend" className="sp-cat-icon-img" />,
     desc: "APIs & logic",
     skills: ["C#", ".NET", "REST APIs", "SQL"],
     projects: [
@@ -104,7 +104,7 @@ const categories = [
   {
     id: "tools",
     label: "Tools",
-    icon: "🛠️",
+    icon: <img src={`${import.meta.env.BASE_URL}tools.png`} alt="Tools" className="sp-cat-icon-img" />,
     desc: "Dev workflow",
     skills: ["Git", "Azure Repos", "VS Code", "Postman"],
     projects: [
@@ -198,11 +198,12 @@ const Skills = () => {
         </nav>
 
         <div className="sp-folder">
-          <div className="sp-folder-tab">
-            <span className="sp-folder-tab-icon">{active.icon}</span>
-            <span className="sp-folder-tab-name">{active.label}</span>
-          </div>
-
+          <img
+            key={activeId}
+            src={`${import.meta.env.BASE_URL}ribbon.png`}
+            alt="Profile"
+            className="sp-folder-avatar"
+          />
           <div className="sp-detail" key={activeId}>
             <div className={`sp-detail-inner ${selectedProject && !isMobile ? "has-preview" : ""}`}>
 

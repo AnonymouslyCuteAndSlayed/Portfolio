@@ -5,7 +5,7 @@ const Navbar = ({ activePage, navigateTo }) => {
     <nav>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/logo.png" alt="My Logo" className="logo-image" />
+          <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="My Logo" className="logo-image" />
         </div>
 
         <div className="navbar-links">
