@@ -198,13 +198,15 @@ const Skills = () => {
         </nav>
 
         <div className="sp-folder">
-          <img
-            key={activeId}
-            src={`${import.meta.env.BASE_URL}ribbon.png`}
-            alt="Profile"
-            className="sp-folder-avatar"
-          />
-          <div className="sp-detail" key={activeId}>
+  {(!selectedProject || isMobile) && (
+    <img
+      key={`avatar-${activeId}`}
+      src={`${import.meta.env.BASE_URL}ribbon.png`}
+      alt="Profile"
+      className="sp-folder-avatar"
+    />
+  )}
+  <div className="sp-detail" key={`detail-${activeId}`}>
             <div className={`sp-detail-inner ${selectedProject && !isMobile ? "has-preview" : ""}`}>
 
               <div className="sp-main-col">
