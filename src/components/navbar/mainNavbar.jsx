@@ -4,8 +4,9 @@ const Navbar = ({ activePage, navigateTo }) => {
   return (
     <nav>
       <div className="navbar-container">
-        <div className="navbar-logo">
+       <div className="navbar-logo">
           <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="My Logo" className="logo-image" />
+          <span className="navbar-logo-text">Cy's Portfolio</span>
         </div>
 
         <div className="navbar-links">

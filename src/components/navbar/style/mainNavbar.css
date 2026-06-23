@@ -69,6 +69,10 @@ nav {
   color: #fcfcfc;
 }
 
+.navbar-logo-text {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navbar-container { padding: 0 16px; }
   .navbar-links { gap: 8px; }
@@ -77,12 +81,37 @@ nav {
 }
 
 @media (max-width: 480px) {
-  .navbar-links { gap: 6px; }
-  .navbar-link { font-size: 12px; padding: 0 8px; }
-  .logo-image { height: 35px; }
-  .navbar-logo {
-    padding: 20px 0px;
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px 16px 12px;
   }
+
+  .navbar-logo {
+    padding: 8px 0 4px;
+  }
+
+  .navbar-logo-text {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f69d9d;
+    letter-spacing: -0.01em;
+  }
+
+  .logo-image { height: 35px; }
+
+  .navbar-links {
+    position: static;
+    transform: none;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-link { font-size: 12px; padding: 6px 10px; }
 }
 
 @media (max-width: 320px) {

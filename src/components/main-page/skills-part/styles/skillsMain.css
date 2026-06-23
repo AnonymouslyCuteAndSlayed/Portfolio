@@ -301,6 +301,7 @@
   gap: 9px;
   cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
 }
 
 .sp-project-card:hover {
@@ -371,6 +372,35 @@
   border: 1px solid #ede9e9;
   padding: 2px 7px;
   border-radius: 999px;
+}
+
+/* ─── Project card link icon ──────────────────────────── */
+.sp-project-link-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1.5px solid #ffd6d6;
+  border-radius: 999px;
+  color: #fd7979;
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s, transform 0.15s, color 0.2s;
+}
+
+.sp-project-card:hover .sp-project-link-icon {
+  opacity: 1;
+}
+
+.sp-project-link-icon:hover {
+  background: #fd7979;
+  color: #fff;
+  transform: scale(1.08);
 }
 
 /* ─── Preview panel ───────────────────────────────────── */
@@ -477,6 +507,28 @@
   border: 1.5px solid #ffd6d6;
   padding: 3px 11px;
   border-radius: 999px;
+}
+
+/* ─── Preview link button ─────────────────────────────── */
+.sp-preview-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: #fd7979;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.sp-preview-link:hover {
+  background: #fc5e5e;
+  transform: translateY(-1px);
 }
 
 .sp-empty {

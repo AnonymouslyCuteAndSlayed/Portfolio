@@ -65,14 +65,34 @@ const categories = [
         techs: ["Figma", "UI/UX Design"],
         status: "done",
         previewImg: `${import.meta.env.BASE_URL}portfolio_ss.png`,
+        link: "",
       },
       {
-        emoji: "",
+        emoji: "🧮",
         name: "WEEPAY: Project Calculator UI",
         desc: "UI/UX design for a project budgeting tool that simplifies cost estimation and financial planning.",
         techs: ["Figma", "UI/UX Design"],
         status: "done",
         previewImg: `${import.meta.env.BASE_URL}weepay_proj.png`,
+        link: "",
+      },
+      {
+        emoji: "🍶",
+        name: "Saeco: Save Ecosystem AI scanner UX",
+        desc: "UI/UX design for an AI-powered scanner application that helps users identify and save resources in an eco-friendly manner.",
+        techs: ["Figma", "UI/UX Design"],
+        status: "done",
+        previewImg: `${import.meta.env.BASE_URL}saeco.png`,
+        link: "https://www.figma.com/proto/djSIauJs9cV5BWbH3gk4sO/FINAL-prototype--ONLINE-?node-id=0-1&t=l0XAFjcHtX0ACUyk-1",
+      },
+      {
+        emoji: "👥",
+        name: "Nexin: Buendia branch website UX",
+        desc: "UI/UX design for the Buendia branch of Nexin, focusing on enhancing user experience and accessibility for visitors.",
+        techs: ["Figma", "UI/UX Design"],
+        status: "done",
+        previewImg: `${import.meta.env.BASE_URL}nexin.png`,
+        link: "https://www.figma.com/design/4TCqhGDCJ1d5bvJXUd9ZNW/system_design?node-id=0-1&m=dev&t=8b6hokQrBuQDEcXb-1",
       },
     ],
   },
@@ -90,6 +110,7 @@ const categories = [
         techs: ["C#", "SQL"],
         status: "done",
         previewImg: `${import.meta.env.BASE_URL}weepay_proj.png`,
+        link: "https://github.com/yourusername/weepay",
       },
        {
         emoji: "🎫",
@@ -98,6 +119,7 @@ const categories = [
         techs: ["MongoDB", "Express", "Node"],
         status: "done",
         previewImg: `${import.meta.env.BASE_URL}Hrizolve_ss.png`,
+        link: "https://github.com/yourusername/hrizolve-backend",
       },
     ],
   },
@@ -114,6 +136,7 @@ const categories = [
         desc: "Used Git for version control and collaboration on various projects, enabling efficient code management and teamwork.",
         techs: ["Git", "Azure Repos"],
         previewImg: `${import.meta.env.BASE_URL}git.png`,
+        link: "https://github.com/yourusername",
       },
       {
         emoji: "🔧",
@@ -121,6 +144,7 @@ const categories = [
         desc: "Utilized Azure DevOps for project management, CI/CD pipelines, and code repositories, streamlining development processes and team collaboration.",
         techs: ["Azure DevOps"],
         previewImg: `${import.meta.env.BASE_URL}azure.png`,
+        link: "",
       }
     ],
   },
@@ -170,6 +194,17 @@ const Skills = () => {
           <span className="sp-preview-tech" key={t}>{t}</span>
         ))}
       </div>
+
+      {selectedProject.link && (
+        <a
+          href={selectedProject.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="sp-preview-link"
+        >
+          View Project ↗
+        </a>
+      )}
     </>
   );
 
@@ -252,6 +287,18 @@ const Skills = () => {
                               <span className="sp-project-tech" key={t}>{t}</span>
                             ))}
                           </div>
+                          {proj.link && (
+                            <a
+                              href={proj.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="sp-project-link-icon"
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label={`Open ${proj.name}`}
+                            >
+                              ↗
+                            </a>
+                          )}
                         </div>
 
                         {isMobile && selectedProject?.name === proj.name && (
