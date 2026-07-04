@@ -1,6 +1,22 @@
+import { Phone } from "lucide-react";
 import "./style/mainNavbar.css";
 
+const PHONE_NUMBER = "+639123456789";
+const FACEBOOK_URL = "https://facebook.com/yourprofile";
+
 const Navbar = ({ activePage, navigateTo }) => {
+  const handleContactClick = () => {
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      window.location.href = `tel:${PHONE_NUMBER}`;
+    } else {
+      window.open(FACEBOOK_URL, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <nav>
       <div className="navbar-container">
@@ -26,6 +42,22 @@ const Navbar = ({ activePage, navigateTo }) => {
             className={`navbar-link ${activePage === "contact" ? "active" : ""}`}
             onClick={() => navigateTo("contact")}
           >Contact</button>
+        </div>
+
+        <div className="navbar-actions">
+          <a
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
+            download="Cy_Resume.pdf"
+            className="navbar-resume-btn"
+          >Download Resume</a>
+
+          <button
+            className="navbar-contact-btn"
+            onClick={handleContactClick}
+          >
+            <Phone size={16} className="navbar-contact-icon" />
+            <span>Contact Me</span>
+          </button>
         </div>
       </div>
     </nav>

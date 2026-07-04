@@ -10,6 +10,7 @@ const About = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      
       setIsBottom(window.scrollY > window.innerHeight * 0.3);
     };
 
