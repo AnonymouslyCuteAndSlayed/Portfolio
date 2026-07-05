@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Phone, ScrollText } from "lucide-react";
 import "./style/mainNavbar.css";
 
@@ -5,6 +6,18 @@ const PHONE_NUMBER = "+639123456789";
 const FACEBOOK_URL = "https://facebook.com/yourprofile";
 
 const Navbar = ({ activePage, navigateTo }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    handleScroll(); // set correct state on mount (e.g. after refresh mid-scroll)
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleContactClick = () => {
     const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -18,7 +31,7 @@ const Navbar = ({ activePage, navigateTo }) => {
   };
 
   return (
-    <nav>
+    <nav className={isScrolled ? "scrolled" : ""}>
       <div className="navbar-container">
        <div className="navbar-logo">
           <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="My Logo" className="logo-image" />
@@ -46,7 +59,7 @@ const Navbar = ({ activePage, navigateTo }) => {
 
         <div className="navbar-actions">
           <a
-            href={`${import.meta.env.BASE_URL}resume.pdf`}
+            href={`${import.meta.env.BASE_URL}Resume.pdf`}
             download="Cy_Resume.pdf"
             className="navbar-resume-btn"
           >
