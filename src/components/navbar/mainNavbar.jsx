@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, ScrollText } from "lucide-react";
 import "./style/mainNavbar.css";
 
 const PHONE_NUMBER = "+639123456789";
@@ -49,7 +49,9 @@ const Navbar = ({ activePage, navigateTo }) => {
             href={`${import.meta.env.BASE_URL}resume.pdf`}
             download="Cy_Resume.pdf"
             className="navbar-resume-btn"
-          >Download Resume</a>
+          >
+            <ScrollText size={16} className="navbar-contact-icon me-2" />
+            Download Resume</a>
 
           <button
             className="navbar-contact-btn"

@@ -87,7 +87,7 @@ nav {
 
 .navbar-resume-btn {
   padding: 8px 20px;
-  border-radius: 5px 5px;
+  border-radius: 8px;
   background-color: #fd7979;
   color: #fffefe;
   font-weight: 500;
@@ -96,35 +96,54 @@ nav {
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  box-shadow: 0 4px 0 #d95f5f;
+  transform: translateY(0);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s;
 }
-
+ 
 .navbar-resume-btn:hover {
   background-color: #f69d9d;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #d95f5f;
+}
+ 
+.navbar-resume-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #d95f5f;
 }
 
 .navbar-contact-btn {
-  padding: 8px 20px;
-  background-color: transparent;
+  padding: 3px 20px;
+  background-color: #fffefe;
   color: #fd7979;
   font-weight: 500;
   font-size: 15px;
   white-space: nowrap;
   border: transparent;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 6px;
+  transform: translateY(0);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s;
 }
-
+ 
 .navbar-contact-btn:hover {
-  color: #f44848;
+  background-color: #f69d9d;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #d95f5f;
+  color: #fffefe;
+}
+ 
+.navbar-contact-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #d95f5f;
 }
 
 .navbar-contact-icon {
