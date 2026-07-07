@@ -1,0 +1,243 @@
+.about-internships-section {
+  position: relative;
+  z-index: 1;
+  padding: 10px 6rem 6rem 6vw;
+}
+
+.about-internships-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-internships-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem;
+}
+
+.about-internships-eyebrow {
+  display: inline-block;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E8749B;
+  margin-bottom: 0.75rem;
+}
+
+.about-internships-title {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 600;
+  color: #D6336C;
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+}
+
+.about-internships-bio {
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #8A7480;
+}
+
+.about-internships-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-internships-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.5rem;
+}
+
+.about-internships-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-internships-marker-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #FDEAF1;
+  color: #D6336C;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.about-internships-marker-line {
+  flex: 1;
+  width: 2px;
+  min-height: 2.5rem;
+  margin: 0.35rem 0;
+  background: linear-gradient(to bottom, #F3B7CC, transparent);
+}
+
+.about-internships-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.75rem 1.75rem 2rem;
+  margin-bottom: 1.75rem;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 24px rgba(214, 51, 108, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-internships-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(214, 51, 108, 0.14);
+}
+
+.about-internships-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.about-internships-card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background-color: #FDEAF1;
+}
+
+.about-internships-card-icon {
+  color: #D6336C;
+}
+
+.about-internships-card-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.about-internships-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3A2E33;
+  margin: 0;
+}
+
+.about-internships-company {
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #E8749B;
+  margin: 0;
+}
+
+.about-internships-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.about-internships-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #8A7480;
+}
+
+.about-internships-meta-icon {
+  color: #E8749B;
+  flex-shrink: 0;
+}
+
+.about-internships-description {
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #8A7480;
+  margin: 0;
+}
+
+.about-internships-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-internships-task {
+  position: relative;
+  padding-left: 1.15rem;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #8A7480;
+}
+
+.about-internships-task::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #E8749B;
+}
+
+.about-internships-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.about-internships-stack-chip {
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #D6336C;
+  background-color: #FDEAF1;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .about-internships-section {
+    padding: 4rem 5vw;
+  }
+
+  .about-internships-item {
+    grid-template-columns: 44px 1fr;
+    gap: 1rem;
+  }
+
+  .about-internships-marker-dot {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .about-internships-card {
+    padding: 1.5rem;
+  }
+
+  .about-internships-header {
+    margin-bottom: 2.5rem;
+  }
+}

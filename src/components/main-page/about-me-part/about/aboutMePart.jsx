@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { forwardRef } from "react";
 import { Coffee, Code2, Palette, Heart } from "lucide-react";
 import "../styles/aboutMePart.css";

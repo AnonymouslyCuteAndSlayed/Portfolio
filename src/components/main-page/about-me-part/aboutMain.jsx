@@ -1,9 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import { Mail } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+
 import Navbar from "./../../navbar/mainNavbar";
 import WatercolorCloudBackground from "../../../assets/background/background";
 import AboutExtended from "./about/aboutMePart";
+import AboutInternships from "./about/aboutInternships";
+
 import "../about-me-part/styles/aboutMain.css";
 
 const AboutMain = () => {
@@ -133,6 +136,7 @@ const AboutMain = () => {
         </section>
 
         <AboutExtended ref={nextRef} />
+        <AboutInternships />
       </main>
     </div>
   );
