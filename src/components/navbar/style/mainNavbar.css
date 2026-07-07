@@ -93,11 +93,11 @@ nav.scrolled::after {
 }
 
 .navbar-link:hover {
-  color: #fd7979;
+  color: #D6336C;
 }
 
 .navbar-link.active {
-  color: #fd7979;
+  color: #D6336C;
 }
 
 .navbar-actions {
@@ -111,7 +111,7 @@ nav.scrolled::after {
 .navbar-resume-btn {
   padding: 8px 20px;
   border-radius: 8px;
-  background-color: #fd7979;
+  background-color: #FF4081;
   color: #fffefe;
   font-weight: 500;
   font-size: 14px;
@@ -129,7 +129,7 @@ nav.scrolled::after {
 }
  
 .navbar-resume-btn:hover {
-  background-color: #f69d9d;
+  background-color: #f76f9c;
   transform: translateY(2px);
   box-shadow: 0 2px 0 #d95f5f;
 }
