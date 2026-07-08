@@ -152,3 +152,51 @@
     margin-bottom: 2.5rem;
   }
 }
+
+.about-extended-capabilities {
+  margin-top: 4rem;
+  padding: 2.5rem 2.5rem;
+  border-radius: 24px;
+  background-color: #FDEAF1;
+}
+
+.about-extended-capabilities-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #D6336C;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.about-extended-capabilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem 2rem;
+}
+
+.about-extended-capabilities-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  color: #3A2E33;
+}
+
+.about-extended-capabilities-icon {
+  color: #D6336C;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .about-extended-capabilities {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-extended-capabilities-list {
+    grid-template-columns: 1fr;
+  }
+}

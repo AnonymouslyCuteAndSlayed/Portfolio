@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { forwardRef } from "react";
-import { Coffee, Code2, Palette, Heart } from "lucide-react";
+import { Coffee, Code2, Palette, Heart, CheckCircle2 } from "lucide-react";
 import "../styles/aboutMePart.css";
 
 const AboutExtended = forwardRef((_, ref) => {
@@ -32,6 +32,17 @@ const AboutExtended = forwardRef((_, ref) => {
     { label: "Focus", value: "Frontend & UI/UX" },
     { label: "Currently", value: "Open to opportunities" },
     { label: "Fun fact", value: "Coffee-powered coder ☕" },
+  ];
+
+  const capabilities = [
+    "Responsive website development",
+    "React applications",
+    "Component-based architecture",
+    "UI implementation from Figma",
+    "CSS animations & transitions",
+    "Cross-browser compatibility",
+    "UX Designing and prototyping",
+    "Clean and maintainable code",
   ];
 
   return (
@@ -69,6 +80,18 @@ const AboutExtended = forwardRef((_, ref) => {
               <p className="about-extended-highlight-description">{description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="about-extended-capabilities">
+          <h3 className="about-extended-capabilities-title">What I can do</h3>
+          <ul className="about-extended-capabilities-list">
+            {capabilities.map((item) => (
+              <li key={item} className="about-extended-capabilities-item">
+                <CheckCircle2 size={18} className="about-extended-capabilities-icon" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
