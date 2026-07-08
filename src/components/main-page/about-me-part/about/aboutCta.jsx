@@ -5,7 +5,7 @@ import "../styles/aboutCTA.css";
 
 const AboutCTA = ({
   cvSrc = `${import.meta.env.BASE_URL}Inigo_CyrilAnne_CV.pdf`,
-  githubHref = "https://github.com/yourusername",
+  githubHref = "https://github.com/AnonymouslyCuteAndSlayed",
   linkedinHref = "https://www.linkedin.com/in/cyril-inigo-profile",
   myEmail = "cyrilinigo1504@gmail.com",
 }) => {
