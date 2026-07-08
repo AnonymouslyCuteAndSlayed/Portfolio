@@ -6,6 +6,7 @@ import Navbar from "./../../navbar/mainNavbar";
 import WatercolorCloudBackground from "../../../assets/background/background";
 import AboutExtended from "./about/aboutMePart";
 import AboutInternships from "./about/aboutInternships";
+import AboutCollege from "./about/aboutCollege";
 
 import "../about-me-part/styles/aboutMain.css";
 
@@ -137,6 +138,8 @@ const AboutMain = () => {
 
         <AboutExtended ref={nextRef} />
         <AboutInternships />
+        <AboutCollege/>
+
       </main>
     </div>
   );
