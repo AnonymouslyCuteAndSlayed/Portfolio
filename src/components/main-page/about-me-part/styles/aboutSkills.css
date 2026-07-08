@@ -95,3 +95,63 @@
     margin-bottom: 1.5rem;
   }
 }
+
+.about-skills-pill-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.about-skills-learning-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1.5px solid #D6336C;
+  cursor: help;
+}
+
+.about-skills-learning-icon {
+  color: #D6336C;
+}
+
+.about-skills-learning-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: #D6336C;
+  color: #FFFFFF;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.about-skills-learning-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #D6336C;
+}
+
+.about-skills-learning-badge:hover .about-skills-learning-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

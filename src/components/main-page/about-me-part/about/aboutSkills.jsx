@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Wrench } from "lucide-react";
+import { Code2, Server, Database, Wrench, Gem } from "lucide-react";
 import "../styles/aboutSkills.css";
 
 const AboutSkills = () => {
@@ -7,29 +7,41 @@ const AboutSkills = () => {
       icon: Code2,
       title: "Frontend",
       skills: [
-        "React",
-        "JavaScript",
-        "TypeScript",
-        "HTML5",
-        "CSS3",
-        "Tailwind CSS",
-        "Bootstrap",
+        { name: "React" },
+        { name: "JavaScript" },
+        { name: "TypeScript", learning: true },
+        { name: "HTML5" },
+        { name: "CSS3" },
+        { name: "Tailwind CSS", learning: true },
+        { name: "Bootstrap" },
       ],
     },
     {
       icon: Server,
       title: "Backend",
-      skills: ["Node.js", "Express", "Firebase", "REST APIs"],
+      skills: [
+        { name: "Node.js" },
+        { name: "Express" },
+        { name: "REST APIs" },
+      ],
     },
     {
       icon: Database,
       title: "Database",
-      skills: ["MySQL", "MongoDB"],
+      skills: [{ name: "MySQL" }, { name: "MongoDB" }],
     },
     {
       icon: Wrench,
       title: "Tools",
-      skills: ["Git", "GitHub", "VS Code", "Azure DevOps", "Figma", "Vite", "npm"],
+      skills: [
+        { name: "Git" },
+        { name: "GitHub" },
+        { name: "VS Code" },
+        { name: "Azure DevOps" },
+        { name: "Figma" },
+        { name: "Vite" },
+        { name: "npm" },
+      ],
     },
   ];
 
@@ -48,9 +60,17 @@ const AboutSkills = () => {
             </div>
 
             <div className="about-skills-pills">
-              {skills.map((skill) => (
-                <span key={skill} className="about-skills-pill">
-                  {skill}
+              {skills.map(({ name, learning }) => (
+                <span key={name} className="about-skills-pill-wrapper">
+                  <span className="about-skills-pill">{name}</span>
+                  {learning && (
+                    <span className="about-skills-learning-badge">
+                      <Gem size={11} className="about-skills-learning-icon" />
+                      <span className="about-skills-learning-tooltip">
+                        Still learning this!
+                      </span>
+                    </span>
+                  )}
                 </span>
               ))}
             </div>
