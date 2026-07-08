@@ -8,6 +8,7 @@ import AboutExtended from "./about/aboutMePart";
 import AboutSkills from "./about/aboutSkills";
 import AboutInternships from "./about/aboutInternships";
 import AboutCollege from "./about/aboutCollege";
+import AboutCTA from "./about/aboutCta";
 
 import "../about-me-part/styles/aboutMain.css";
 
@@ -141,6 +142,7 @@ const AboutMain = () => {
         <AboutSkills />
         <AboutInternships />
         <AboutCollege/>
+        <AboutCTA />
 
       </main>
     </div>
