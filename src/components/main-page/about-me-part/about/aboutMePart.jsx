@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { forwardRef } from "react";
-import { Coffee, Code2, Palette, Heart, CheckCircle2 } from "lucide-react";
+import { Coffee, Code2, Palette, Heart, CheckCircle2, Sparkles } from "lucide-react";
 import "../styles/aboutMePart.css";
 
 const AboutExtended = forwardRef((_, ref) => {
@@ -45,6 +45,16 @@ const AboutExtended = forwardRef((_, ref) => {
     "Clean and maintainable code",
   ];
 
+  const interests = [
+    "Learning new web technologies",
+    "UI/UX design",
+    "Playing games",
+    "Digital art",
+    "Exploring AI tools",
+    "Arts",
+    "Reading books",
+  ];
+
   return (
     <section ref={ref} className="about-extended-section">
       <div className="about-extended-container">
@@ -82,16 +92,31 @@ const AboutExtended = forwardRef((_, ref) => {
           ))}
         </div>
 
-        <div className="about-extended-capabilities">
-          <h3 className="about-extended-capabilities-title">What I can do</h3>
-          <ul className="about-extended-capabilities-list">
-            {capabilities.map((item) => (
-              <li key={item} className="about-extended-capabilities-item">
-                <CheckCircle2 size={18} className="about-extended-capabilities-icon" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="about-extended-side-by-side">
+          <div className="about-extended-capabilities">
+            <h3 className="about-extended-capabilities-title">What I can do</h3>
+            <ul className="about-extended-capabilities-list">
+              {capabilities.map((item) => (
+                <li key={item} className="about-extended-capabilities-item">
+                  <CheckCircle2 size={18} className="about-extended-capabilities-icon" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="about-extended-interests">
+            <h3 className="about-extended-interests-title">Interests</h3>
+            <p className="about-extended-interests-intro">Outside coding, I enjoy:</p>
+            <ul className="about-extended-interests-list">
+              {interests.map((item) => (
+                <li key={item} className="about-extended-interests-item">
+                  <Sparkles size={18} className="about-extended-interests-icon" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
