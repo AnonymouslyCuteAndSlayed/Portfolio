@@ -1,0 +1,97 @@
+.about-skills {
+  margin-top: 1rem;
+  padding: 1rem 8rem;
+  background: none;
+  margin-bottom: 10rem;
+}
+
+.about-skills-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #D6336C;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.about-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.about-skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-skills-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-skills-category-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background-color: #FDEAF1;
+  flex-shrink: 0;
+}
+
+.about-skills-category-icon {
+  color: #D6336C;
+}
+
+.about-skills-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3A2E33;
+  margin: 0;
+}
+
+.about-skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-skills-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background-color: #FDEAF1;
+  color: #D6336C;
+  font-family: "Comfortaa", "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.about-skills-pill:hover {
+  background-color: #D6336C;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .about-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-skills {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-skills-title {
+    margin-bottom: 1.5rem;
+  }
+}

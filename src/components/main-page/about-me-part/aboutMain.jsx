@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Navbar from "./../../navbar/mainNavbar";
 import WatercolorCloudBackground from "../../../assets/background/background";
 import AboutExtended from "./about/aboutMePart";
+import AboutSkills from "./about/aboutSkills";
 import AboutInternships from "./about/aboutInternships";
 import AboutCollege from "./about/aboutCollege";
 
@@ -137,6 +138,7 @@ const AboutMain = () => {
         </section>
 
         <AboutExtended ref={nextRef} />
+        <AboutSkills />
         <AboutInternships />
         <AboutCollege/>
 
